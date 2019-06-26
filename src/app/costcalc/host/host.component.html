@@ -1,0 +1,86 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>商品の金額と内容量を入力してください。</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+<!-- <h1>
+    比較したい商品の金額と内容量を入力して比較ボタンを押してください。
+  </h1> -->
+<table>
+  <tr>
+    <td>
+      <h2>商品A</h2>
+    </td>
+    <td>
+      <h2>商品B</h2>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <mat-form-field class="min-width">
+        <input [(ngModel)]="kinA" matInput type="number" placeholder="金額">
+      </mat-form-field>
+    </td>
+    <td>
+      <mat-form-field class="min-width">
+        <input [(ngModel)]="kinB" matInput type="number" placeholder="金額">
+      </mat-form-field>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <mat-form-field class="min-width">
+        <input [(ngModel)]="ryoA" matInput type="number" placeholder="内容量">
+      </mat-form-field>
+    </td>
+    <td>
+      <mat-form-field class="min-width">
+        <input [(ngModel)]="ryoB" matInput type="number" placeholder="内容量">
+      </mat-form-field>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <button mat-raised-button class="btn-width" color="primary" matTooltip="比較" (click)="calcAtoB()">
+        比較<mat-icon id="compare_arrows">compare_arrows</mat-icon>
+      </button>
+    </td>
+    <td>
+      <button mat-raised-button class="btn-width" color="primary" matTooltip="Clear" (click)="clearAtoB()">
+        Clear<mat-icon id="clear">clear</mat-icon>
+      </button>
+    </td>
+  </tr>
+</table>
+<h1>
+  {{ calcresult }}
+</h1>
+
+<!-- <label class="labelName">比較対象の商品個数を選択してください</label>
+<div>
+  <mat-button-toggle-group #toggleB  name={{numberList.itemName}} color="primary" >
+    <mat-button-toggle *ngFor="let toggleList of numberList" [value]="toggleList.itemName" (click)="cleateItem(toggleList.itemName)" >
+      {{toggleList.itemName}}
+    </mat-button-toggle>
+  </mat-button-toggle-group>
+</div> -->
+
+<!-- <ng-container *ngFor="let clacListRow of clacList">
+<mat-card class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>{{clacListRow.itemName}}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-form-field class="min-width">
+      <input [(ngModel)]='clacListRow.ryo' matInput type="number" placeholder="内容量" >
+    </mat-form-field>
+    <mat-form-field class="min-width">
+      <input [(ngModel)]='clacListRow.kin' matInput type="number" placeholder="金額" >
+    </mat-form-field>
+    <mat-form-field class="min-width">
+      <input [(ngModel)]='clacListRow.tanka' matInput readonly="true" type="number" placeholder="単価">
+    </mat-form-field>
+  </mat-card-content>
+</mat-card>
+</ng-container> -->
